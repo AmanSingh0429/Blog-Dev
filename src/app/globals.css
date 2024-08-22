@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0d0c22;
+}
+
+@layer components {
+  .wraper {
+    @apply relative overflow-hidden flex items-center justify-center
+  }
+
+  .wraper::before {
+    background: conic-gradient(rgb(35, 181, 211) 10deg, rgb(117, 171, 188) 0deg, transparent 80deg);
+    @apply absolute w-[250%] h-[250%] content-[''] animate-border-spin
+  }
+
+  .content {
+    @apply absolute w-[calc(100%-2px)] h-[calc(100%-2px)]
+  }
+}
